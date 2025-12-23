@@ -76,12 +76,12 @@ export const StudentsManagement: React.FC = () => {
     {
       key: 'academicAverage',
       label: 'Média',
-      render: (value) => (value ? value.toFixed(2) : '-'),
+      render: (value) => (value ? Number(value).toFixed(2) : '-'),
     },
     {
       key: 'behavioralScore',
       label: 'Comportamento',
-      render: (value) => (value ? value.toFixed(1) : '-'),
+      render: (value) => (value ? Number(value).toFixed(1) : '-'),
     },
     {
       key: 'hasSpecialNeeds',
@@ -297,13 +297,13 @@ export const StudentsManagement: React.FC = () => {
               <div>
                 <p className="text-sm font-medium text-gray-500">Média Acadêmica</p>
                 <p className="mt-1 text-sm text-gray-900">
-                  {selectedStudent.academicAverage?.toFixed(2) || '-'}
+                  {selectedStudent.academicAverage ? Number(selectedStudent.academicAverage).toFixed(2) : '-'}
                 </p>
               </div>
               <div>
                 <p className="text-sm font-medium text-gray-500">Nota Comportamental</p>
                 <p className="mt-1 text-sm text-gray-900">
-                  {selectedStudent.behavioralScore?.toFixed(1) || '-'}
+                  {selectedStudent.behavioralScore ? Number(selectedStudent.behavioralScore).toFixed(1) : '-'}
                 </p>
               </div>
               <div className="col-span-2">
