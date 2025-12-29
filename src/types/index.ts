@@ -250,6 +250,107 @@ export interface ClassFilters {
 }
 
 // ============================================================================
+// Preferences & Constraints Types (Phase 3)
+// ============================================================================
+
+export interface StudentPreference {
+  id: number;
+  studentId: number;
+  preferredStudentId: number;
+  priority: 1 | 2 | 3;
+  createdAt: string;
+  studentName?: string;
+  preferredStudentName?: string;
+  gradeLevelId?: number;
+}
+
+export interface CreateStudentPreferenceDTO {
+  studentId: number;
+  preferredStudentId: number;
+  priority: 1 | 2 | 3;
+}
+
+export interface BulkPreferencesDTO {
+  studentId: number;
+  preferences: Array<{
+    preferredStudentId: number;
+    priority: 1 | 2 | 3;
+  }>;
+}
+
+export type ConstraintAction = 'SEPARATE' | 'GROUP';
+
+export interface StudentConstraint {
+  id: number;
+  schoolYearId: number;
+  studentAId: number;
+  studentBId: number;
+  constraintTypeId: number;
+  action: ConstraintAction;
+  reason?: string;
+  createdBy?: string;
+  createdAt: string;
+  updatedAt: string;
+  studentAName?: string;
+  studentBName?: string;
+  constraintTypeName?: string;
+  constraintTypeWeight?: number;
+}
+
+export interface CreateStudentConstraintDTO {
+  schoolYearId: number;
+  studentAId: number;
+  studentBId: number;
+  constraintTypeId: number;
+  action: ConstraintAction;
+  reason?: string;
+  createdBy?: string;
+}
+
+export interface UpdateStudentConstraintDTO {
+  constraintTypeId?: number;
+  action?: ConstraintAction;
+  reason?: string;
+}
+
+export type SiblingRuleType = 'SAME_CLASS' | 'DIFFERENT_CLASS' | 'NO_PREFERENCE';
+
+export interface SiblingRule {
+  id: number;
+  schoolYearId: number;
+  studentAId: number;
+  studentBId: number;
+  ruleType: SiblingRuleType;
+  reason?: string;
+  createdAt: string;
+  studentAName?: string;
+  studentBName?: string;
+  gradeLevelId?: number;
+}
+
+export interface CreateSiblingRuleDTO {
+  schoolYearId: number;
+  studentAId: number;
+  studentBId: number;
+  ruleType: SiblingRuleType;
+  reason?: string;
+}
+
+export interface UpdateSiblingRuleDTO {
+  ruleType?: SiblingRuleType;
+  reason?: string;
+}
+
+export interface ConstraintType {
+  id: number;
+  code: string;
+  name: string;
+  weight: number;
+  description?: string;
+  createdAt: string;
+}
+
+// ============================================================================
 // Optimization Types
 // ============================================================================
 

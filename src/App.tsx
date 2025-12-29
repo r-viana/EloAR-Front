@@ -3,6 +3,8 @@ import { Header, Sidebar, Navigation } from './components/layout';
 import Dashboard from './pages/Dashboard';
 import { ImportData } from './pages/ImportData';
 import { StudentsManagement } from './pages/StudentsManagement';
+import { StudentPreferences } from './pages/StudentPreferences';
+import { ConstraintsManagement } from './pages/ConstraintsManagement';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -22,10 +24,10 @@ function App() {
             <Route path="/" element={<Dashboard />} />
             <Route path="/import" element={<ImportData />} />
             <Route path="/students" element={<StudentsManagement />} />
+            <Route path="/preferences" element={<StudentPreferences />} />
+            <Route path="/constraints" element={<ConstraintsManagement />} />
 
             {/* Future routes */}
-            {/* <Route path="/preferences" element={<PreferencesManagement />} /> */}
-            {/* <Route path="/constraints" element={<ConstraintsManagement />} /> */}
             {/* <Route path="/configuration" element={<Configuration />} /> */}
             {/* <Route path="/optimization" element={<Optimization />} /> */}
             {/* <Route path="/distribution/:id" element={<Distribution />} /> */}
