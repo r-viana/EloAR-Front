@@ -5,6 +5,7 @@ import { ImportData } from './pages/ImportData';
 import { StudentsManagement } from './pages/StudentsManagement';
 import { StudentPreferences } from './pages/StudentPreferences';
 import { ConstraintsManagement } from './pages/ConstraintsManagement';
+import { ConfigurationManagement } from './pages/ConfigurationManagement';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -26,9 +27,9 @@ function App() {
             <Route path="/students" element={<StudentsManagement />} />
             <Route path="/preferences" element={<StudentPreferences />} />
             <Route path="/constraints" element={<ConstraintsManagement />} />
+            <Route path="/configuration" element={<ConfigurationManagement />} />
 
             {/* Future routes */}
-            {/* <Route path="/configuration" element={<Configuration />} /> */}
             {/* <Route path="/optimization" element={<Optimization />} /> */}
             {/* <Route path="/distribution/:id" element={<Distribution />} /> */}
             {/* <Route path="/reports" element={<Reports />} /> */}

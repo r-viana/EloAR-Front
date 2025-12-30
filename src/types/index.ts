@@ -105,36 +105,6 @@ export interface GradeLevel {
   updatedAt: string;
 }
 
-export interface StudentPreference {
-  id: number;
-  studentId: number;
-  preferredStudentId: number;
-  priority: number;
-  createdAt: string;
-  updatedAt: string;
-}
-
-export interface Constraint {
-  id: number;
-  studentAId: number;
-  studentBId: number;
-  constraintTypeId: number;
-  ruleType: 'SEPARATE' | 'GROUP';
-  reason?: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
-export interface ConstraintType {
-  id: number;
-  name: string;
-  code: string;
-  weight: number;
-  description?: string;
-  createdAt: string;
-  updatedAt: string;
-}
-
 export interface Configuration {
   id: number;
   name: string;
@@ -153,6 +123,25 @@ export interface WeightConfiguration {
   student_preferences: number;
   academic_balance: number;
   class_size_balance: number;
+}
+
+export interface CreateConfigurationDTO {
+  name: string;
+  description?: string;
+  weights: WeightConfiguration;
+  isDefault?: boolean;
+}
+
+export interface UpdateConfigurationDTO {
+  name?: string;
+  description?: string;
+  weights?: WeightConfiguration;
+  isDefault?: boolean;
+}
+
+export interface ConfigurationStats {
+  total: number;
+  defaultConfig: Configuration | null;
 }
 
 export interface Distribution {
