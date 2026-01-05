@@ -7,6 +7,7 @@ import { StudentPreferences } from './pages/StudentPreferences';
 import { ConstraintsManagement } from './pages/ConstraintsManagement';
 import { ConfigurationManagement } from './pages/ConfigurationManagement';
 import { Optimization } from './pages/Optimization';
+import { DistributionDetail } from './pages/DistributionDetail';
 import NotFound from './pages/NotFound';
 
 function App() {
@@ -30,9 +31,9 @@ function App() {
             <Route path="/constraints" element={<ConstraintsManagement />} />
             <Route path="/configuration" element={<ConfigurationManagement />} />
             <Route path="/optimization" element={<Optimization />} />
+            <Route path="/distribution/:id" element={<DistributionDetail />} />
 
             {/* Future routes */}
-            {/* <Route path="/distribution/:id" element={<Distribution />} /> */}
             {/* <Route path="/reports" element={<Reports />} /> */}
 
             <Route path="*" element={<NotFound />} />
